@@ -1,0 +1,34 @@
+---
+title: "Browser"
+author: "Mohamed Farag"
+date: "Week-8"
+output: html_document
+---
+
+```{r eval=FALSE}
+x = 5
+browser()
+x = -abs(x)
+log(x)     # only yields a warning if a negative number is input
+```
+
+```{r eval=FALSE}
+f = function(a){g(a)}
+g = function(b){h(b)}
+h = function(c){i(c)+"a"}
+i = function(d){d}
+f(10)
+```
+
+```{r}
+try(log("x"), silent=TRUE)
+```
+
+
+```{r}
+tryCatch({log("x")},
+  error = function(y) "error message",
+  warning = function(y) "warning message",
+  message = function(y) "message"
+)
+```
